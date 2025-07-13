@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Interactiva - Pedagogía en Inglés</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fffaf0; color: #333; padding: 2rem; }
+    h1 { text-align: center; color: #c27c0e; }
+    .semestre {
+      background: #fff5cc; border-left: 6px solid #c27c0e;
+      margin-bottom: 2rem; padding: 1rem; border-radius: 10px;
+    }
+    .semestre h2 { margin-top: 0; color: #a65d03; }
+    .ramo {
+      display: flex; flex-direction: column;
+      padding: 0.5rem 1rem; border-bottom: 1px dashed #c27c0e;
+    }
+    .ramo-header {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .ramo.aprobado { background-color: #dff2bf; }
+    .toggle-aprobado {
+      cursor: pointer; padding: 0.3rem 0.6rem;
+      background: #f7e9b7; border: 1px solid #c27c0e; border-radius: 6px;
+    }
+    .prereq { font-size: 0.9rem; color: #555; margin-left: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva 2024<br>Pedagogía en Comunicación en Lengua Inglesa - UACh</h1>
+
+  <!-- Aquí irían los semestres del 1 al 10 cargados. Por ahora es el esqueleto. -->
+  <div class="semestre">
+    <h2>1° Semestre</h2>
+    <div class="ramo">
+      <div class="ramo-header">
+        <span>ILIN050-19: English Language I: The Individual in Society</span>
+        <button class="toggle-aprobado">Aprobar</button>
+      </div>
+    </div>
+    <!-- ...otros ramos -->
+  </div>
+
+  <script>
+    const botones = document.querySelectorAll('.toggle-aprobado');
+    botones.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ramo = btn.closest('.ramo');
+        ramo.classList.toggle('aprobado');
+      });
+    });
+  </script>
+</body>
+</html>
